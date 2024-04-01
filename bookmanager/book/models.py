@@ -11,9 +11,10 @@ class BookInfo(models.Model):
     #id
     name = models.CharField(max_length=10)
 #人物 先复制过来 后期讲原理
-class PeopleInfo(models.Medel):
+# 准备人物列表信息的模型类
+class PeopleInfo(models.Model):
     name = models.CharField(max_length=10)
-    gender = models.Booleanfield()
-    #外键约束:人物属于哪本书
-    book = models.ForeiginKey (BookInfo,on_delete=models.CASCADE)
+    gender = models.BooleanField()
+    # 外键约束：人物属于哪本书
+    book = models.ForeignKey(BookInfo,on_delete=models.CASCADE)
 
